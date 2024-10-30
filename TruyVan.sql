@@ -53,3 +53,29 @@ LIMIT 10;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+
+--  cau 6: Viết câu truy vấn lấy ra 10 sản phẩm tiếp theo 10 sản phẩm mới nhất
+SELECT * 
+FROM products 
+ORDER BY created_at DESC 
+LIMIT 10 OFFSET 10;
+
+-- cau 7: Viết câu truy vấn lấy ra tất cả sản phẩm mà nội dung có chứa từ khoá “128GB"
+SELECT *
+FROM products
+WHERE products.description LIKE %"128GB"%;
+
+-- cau 8: Viết câu truy vấn xóa sản phẩm có id=10 trong bảng products
+
+DELETE FROM products 
+WHERE products.id =10;
+
+-- cau 9: Viết câu truy vấn thêm 1 sản phẩm
+
+INSERT INTO products VALUES (17, 'laptop acer', 2, 2, 30000000, 'galaxy_book.jpg', 'may tinh sai bao ngon ', 0, '2024-10-27 16:32:28');
+
+-- cau 10: Viết câu truy vấn sửa giá của sản phẩm có id=11 thành 899,000 VND
+UPDATE products 
+SET products.price = '899.000'
+WHERE id = 11;
+
